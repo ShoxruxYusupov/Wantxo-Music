@@ -7,6 +7,7 @@ import { Discover } from '../pages';
 import { DisplayOption } from './DisplayOption/DisplayOption';
 import SongCard from './SongCard';
 import { useMatchMedia } from '../hooks/use-match-media';
+import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 
 export const TopChartCard = ({
   song,
@@ -35,13 +36,13 @@ export const TopChartCard = ({
   >
     <h3 className="text-sm text-gray font-normal mr-3 ">{i + 1}</h3>
     <img
-      src={song.img}
+      src={song.image}
       alt="name"
       className="h-14 w-14 rounded-lg object-cover"
     />
     <div className="flex-1 flex flex-col juctify-center mx-3">
       <Link
-        to={`/songs/${song.id}`}
+        to={`/songs/${song.id - 2}`}
         className="w-fit"
       >
         <p className="text-base font-medium text-white">{song.name}</p>
@@ -75,10 +76,12 @@ const TopPlay = () => {
 
   const [isMobile] = useMatchMedia();
 
+  const { data, isLoading } = useGetTopChartsQuery();
+
   return (
     <>
       <div className="relative sm:pt-10 top-0 h-fit flex-1 flex justify-center">
-        <Discover />
+        <Discover tracks={data} />
       </div>
       <div className="flex flex-col sm:flex-[4] flex-1">
         <div className="w-full flex flex-col">
@@ -96,7 +99,7 @@ const TopPlay = () => {
                   }`
             }
           >
-            {tracks?.map((item, i) => {
+            {data?.map((item, i) => {
               if (display === 1) {
                 return (
                   <TopChartCard

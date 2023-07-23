@@ -1,18 +1,17 @@
-import { SongCard } from "../components";
-import { useSelector } from "react-redux";
-import { tracks } from "../assets/constants";
+import { SongCard } from '../components';
+import { useSelector } from 'react-redux';
 
-const Discover = ({ id }) => {
+const Discover = ({ id, tracks }) => {
   const { isPlaying, activeSong } = useSelector((state) => state.player);
 
-  const last = tracks[tracks.length - 1];
+  let last = tracks?.[tracks.length - 1];
 
   return (
     <>
       {id ? (
         <SongCard
-          key={tracks[id - 1].id}
-          song={tracks[id - 1]}
+          key={tracks?.[id - 1].id}
+          song={tracks?.[id - 1]}
           i={0}
           isPlaying={isPlaying}
           activeSong={activeSong}
@@ -21,7 +20,7 @@ const Discover = ({ id }) => {
         />
       ) : (
         <SongCard
-          key={last.id}
+          key={last?.id}
           song={last}
           i={0}
           isPlaying={isPlaying}

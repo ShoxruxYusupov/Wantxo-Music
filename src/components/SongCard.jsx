@@ -16,7 +16,7 @@ const Last = ({
   handlePlayClick
 }) => (
   <>
-    {isPlaying && activeSong?.name === song.name ? (
+    {isPlaying && activeSong?.name === song?.name ? (
       <div
         className={`absolute inset-0 justify-center items-center flex bg-black bg-opacity-70 cursor-pointer`}
         onClick={handlePauseClick}
@@ -58,8 +58,8 @@ const SongCard = ({ song, i, isPlaying, activeSong, baza, last, type }) => {
 
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = async (copy) => {
-    await navigator.clipboard.writeText(copy);
+  const handleCopy = (copy) => {
+    navigator.clipboard.writeText(copy);
     setCopied(true);
     setTimeout(() => setCopied(false), 1700);
   };
@@ -116,7 +116,7 @@ const SongCard = ({ song, i, isPlaying, activeSong, baza, last, type }) => {
           </div>
         )}
         <img
-          src={song.img}
+          src={song?.image}
           className={`w-full sm:h-full object-cover ${
             type ? 'h-[171px]' : 'h-[390px]'
           }`}
@@ -128,11 +128,11 @@ const SongCard = ({ song, i, isPlaying, activeSong, baza, last, type }) => {
         <div
           className={`mt-4 flex sm:static absolute left-[6%] bottom-0 z-50 sm:text-center text-start flex-col`}
         >
-          <Link to={`/songs/${song.id}`}>
+          <Link to={`/songs/${song?.id - 2}`}>
             <p className={`font-semibold text-white text-2xl truncate`}>
-              {song.name}
+              {song?.name}
             </p>
-            <p className={`text-lg truncate text-gray mt-1`}>{song.author}</p>
+            <p className={`text-lg truncate text-gray mt-1`}>{song?.author}</p>
           </Link>
         </div>
       ) : (
@@ -141,14 +141,14 @@ const SongCard = ({ song, i, isPlaying, activeSong, baza, last, type }) => {
             !type ? 'absolute' : 'static'
           } pl-[6%] sm:pl-0 w-full sm:w-auto bottom-0 z-50 text-start flex-col`}
         >
-          <Link to={`/songs/${song.id}`}>
+          <Link to={`/songs/${song?.id - 2}`}>
             <p
               className={`font-semibold text-white sm:text-lg text-2xl truncate`}
             >
-              {song.name}
+              {song?.name}
             </p>
             <p className={`sm:text-sm text-lg truncate text-gray mt-1`}>
-              {song.author}
+              {song?.author}
             </p>
           </Link>
           <div
@@ -157,7 +157,7 @@ const SongCard = ({ song, i, isPlaying, activeSong, baza, last, type }) => {
             } justify-around`}
           >
             <a
-              href={song.song}
+              href={song?.song}
               download
             >
               <BsDownload
