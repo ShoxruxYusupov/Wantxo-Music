@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.smooth-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hsl {
+  background-image: linear-gradient(
+    40deg,
+    hsl(240deg 87% 28%) 0%,
+    hsl(272deg 100% 26%) 1%,
+    hsl(289deg 100% 26%) 4%,
+    hsl(303deg 100% 27%) 8%,
+    hsl(314deg 100% 32%) 13%,
+    hsl(322deg 100% 36%) 20%,
+    hsl(328deg 100% 40%) 29%,
+    hsl(333deg 100% 44%) 39%,
+    hsl(337deg 100% 47%) 49%,
+    hsl(344deg 96% 53%) 59%,
+    hsl(356deg 100% 61%) 68%,
+    hsl(8deg 100% 61%) 75%,
+    hsl(18deg 100% 59%) 81%,
+    hsl(26deg 100% 56%) 86%,
+    hsl(35deg 100% 52%) 90%,
+    hsl(41deg 100% 50%) 94%,
+    hsl(46deg 100% 50%) 96%,
+    hsl(50deg 100% 50%) 98%,
+    hsl(55deg 100% 50%) 100%
+  );
+}
+
+.hoverCard:hover {
+  background-image: linear-gradient(
+    40deg,
+    hsl(240deg 87% 28%) 0%,
+    hsl(272deg 100% 26%) 1%,
+    hsl(289deg 100% 26%) 4%,
+    hsl(303deg 100% 27%) 8%,
+    hsl(314deg 100% 32%) 13%,
+    hsl(322deg 100% 36%) 20%,
+    hsl(328deg 100% 40%) 29%,
+    hsl(333deg 100% 44%) 39%,
+    hsl(337deg 100% 47%) 49%,
+    hsl(344deg 96% 53%) 59%,
+    hsl(356deg 100% 61%) 68%,
+    hsl(8deg 100% 61%) 75%,
+    hsl(18deg 100% 59%) 81%,
+    hsl(26deg 100% 56%) 86%,
+    hsl(35deg 100% 52%) 90%,
+    hsl(41deg 100% 50%) 94%,
+    hsl(46deg 100% 50%) 96%,
+    hsl(50deg 100% 50%) 98%,
+    hsl(55deg 100% 50%) 100%
+  );
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+  width: 5px;
+  height: 5px;
+  box-shadow: -700px 0 0 700px #fff;
+  border: 0;
+}
+input[type='range']::-moz-slider-thumb {
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+  width: 5px;
+  height: 5px;
+  box-shadow: -700px 0 0 700px #fff;
+  border: 0;
+}
+
+/* Gradient music vizualizer */
+.megaGradient {
+  background-image: linear-gradient(
+    60deg,
+    hsl(240deg 87% 28%) 0%,
+    hsl(272deg 100% 26%) 1%,
+    hsl(289deg 100% 26%) 4%,
+    hsl(303deg 100% 27%) 8%,
+    hsl(314deg 100% 32%) 13%,
+    hsl(322deg 100% 36%) 20%,
+    hsl(328deg 100% 40%) 29%,
+    hsl(333deg 100% 44%) 39%,
+    hsl(337deg 100% 47%) 49%,
+    hsl(344deg 96% 53%) 59%,
+    hsl(356deg 100% 61%) 68%,
+    hsl(8deg 100% 61%) 75%,
+    hsl(18deg 100% 59%) 81%,
+    hsl(26deg 100% 56%) 86%,
+    hsl(35deg 100% 52%) 90%,
+    hsl(41deg 100% 50%) 94%,
+    hsl(46deg 100% 50%) 96%,
+    hsl(50deg 100% 50%) 98%,
+    hsl(55deg 100% 50%) 100%
+  );
+  background-size: 400% 400%;
+}
+
+.activeGradient {
+  animation: gradient 4s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.lazer {
+  background-image: linear-gradient(
+    140deg,
+    hsl(60deg 5% 4%) 0%,
+    hsl(47deg 100% 3%) 14%,
+    hsl(34deg 100% 5%) 22%,
+    hsl(25deg 100% 7%) 27%,
+    hsl(18deg 100% 9%) 30%,
+    hsl(9deg 100% 10%) 33%,
+    hsl(0deg 100% 12%) 35%,
+    hsl(7deg 72% 24%) 37%,
+    hsl(19deg 75% 32%) 39%,
+    hsl(29deg 82% 39%) 40%,
+    hsl(39deg 95% 43%) 41%,
+    hsl(46deg 100% 47%) 42%,
+    hsl(55deg 100% 50%) 43%,
+    hsl(46deg 100% 47%) 44%,
+    hsl(39deg 95% 43%) 45%,
+    hsl(29deg 82% 39%) 47%,
+    hsl(19deg 75% 32%) 48%,
+    hsl(7deg 72% 24%) 50%,
+    hsl(0deg 100% 12%) 52%,
+    hsl(9deg 100% 10%) 55%,
+    hsl(18deg 100% 9%) 59%,
+    hsl(25deg 100% 7%) 64%,
+    hsl(34deg 100% 5%) 70%,
+    hsl(47deg 100% 3%) 80%,
+    hsl(60deg 5% 4%) 100%
+  );
+  animation: laz 0.8s linear forwards;
+}
+
+@media (max-width: 640px) {
+  .lazer {
+    background-image: linear-gradient(
+      140deg,
+      hsl(60deg 5% 4%) 0%,
+      hsl(47deg 100% 3%) 14%,
+      hsl(34deg 100% 5%) 22%,
+      hsl(25deg 100% 7%) 27%,
+      hsl(18deg 100% 9%) 30%,
+      hsl(9deg 100% 10%) 33%,
+      hsl(0deg 100% 12%) 35%,
+      hsl(7deg 72% 24%) 37%,
+      hsl(19deg 75% 32%) 39%,
+      hsl(29deg 82% 39%) 40%,
+      hsl(39deg 95% 43%) 41%,
+      hsl(46deg 100% 47%) 42%,
+      hsl(55deg 100% 50%) 43%,
+      hsl(46deg 100% 47%) 44%,
+      hsl(39deg 95% 43%) 45%,
+      hsl(29deg 82% 39%) 47%,
+      hsl(19deg 75% 32%) 48%,
+      hsl(7deg 72% 24%) 50%,
+      hsl(0deg 100% 12%) 52%,
+      hsl(9deg 100% 10%) 55%,
+      hsl(18deg 100% 9%) 59%,
+      hsl(25deg 100% 7%) 64%,
+      hsl(34deg 100% 5%) 70%,
+      hsl(47deg 100% 3%) 80%,
+      hsl(60deg 5% 4%) 100%
+    );
+    animation: laz1 1s linear forwards;
+  }
+}
+
+@keyframes laz {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+  }
+}
+@keyframes laz1 {
+  0% {
+    top: -150%;
+    left: -200%;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+  }
+}
