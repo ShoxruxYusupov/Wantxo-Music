@@ -9,7 +9,7 @@ const SongDetails = () => {
   const divRef = useRef(null);
   const { songid } = useParams();
 
-  const { data, isLoading } = useGetTopChartsQuery();
+  const { data } = useGetTopChartsQuery();
 
   const song = data?.[songid - 1];
 
@@ -27,7 +27,12 @@ const SongDetails = () => {
         className="flex flex-col sm:pt-10 pt-3 pl-4 sm:pl-0 flex-[4]"
         ref={divRef}
       >
-        {!isMobile && <DetailsHeader song={song} />}
+        {!isMobile && (
+          <DetailsHeader
+            song={song}
+            tracks={data}
+          />
+        )}
 
         <h2 className="text-white text-3xl font-bold">Lyrics:</h2>
 

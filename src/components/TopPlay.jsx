@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 import { Link } from 'react-router-dom';
 import PlayPause from './PlayPause';
-import { tracks } from '../assets/constants';
 import { Discover } from '../pages';
 import { DisplayOption } from './DisplayOption/DisplayOption';
 import SongCard from './SongCard';
@@ -66,17 +65,17 @@ const TopPlay = () => {
     (state) => state.player
   );
 
+  const { data } = useGetTopChartsQuery();
+
   const handlePauseClick = () => {
     dispatch(playPause(false));
   };
   const handlePlayClick = (song, i) => {
-    dispatch(setActiveSong({ song, baza: tracks, i }));
+    dispatch(setActiveSong({ song, baza: data, i }));
     dispatch(playPause(true));
   };
 
   const [isMobile] = useMatchMedia();
-
-  const { data, isLoading } = useGetTopChartsQuery();
 
   return (
     <>
@@ -120,7 +119,7 @@ const TopPlay = () => {
                     i={i}
                     isPlaying={isPlaying}
                     activeSong={activeSong}
-                    baza={tracks}
+                    baza={data}
                     last={false}
                     type={true}
                   />

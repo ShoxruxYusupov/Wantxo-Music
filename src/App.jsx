@@ -15,7 +15,7 @@ const App = () => {
 
   setTimeout(() => setLoader(false), 2000);
 
-  if (!isLoading) {
+  if (!(isLoading || loader)) {
     setTimeout(() => setTime(false), 1000);
   }
 

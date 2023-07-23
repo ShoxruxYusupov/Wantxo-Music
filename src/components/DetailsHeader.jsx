@@ -1,9 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import { playPause, setActiveSong } from "../redux/features/playerSlice";
-import PlayPause from "./PlayPause";
-import { tracks } from "../assets/constants";
+import { useDispatch, useSelector } from 'react-redux';
+import { playPause, setActiveSong } from '../redux/features/playerSlice';
+import PlayPause from './PlayPause';
 
-const DetailsHeader = ({ song }) => {
+const DetailsHeader = ({ song, tracks }) => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
@@ -16,7 +15,11 @@ const DetailsHeader = ({ song }) => {
   };
 
   return (
-    <div className={`relative w-full flex items-center p-4 bg-red-600 mb-4 rounded-full megaGradient ${isPlaying && 'activeGradient'}`}>
+    <div
+      className={`relative w-full flex items-center p-4 bg-red-600 mb-4 rounded-full megaGradient ${
+        isPlaying && 'activeGradient'
+      }`}
+    >
       <div>
         <PlayPause
           isPlaying={isPlaying}
