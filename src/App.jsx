@@ -4,16 +4,18 @@ import { MusicPlayer } from './components';
 import { dollar } from './assets';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom/dist';
-import { useGetTopChartsQuery } from './redux/services/shazamCore';
 
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
   const [time, setTime] = useState(true);
   const [loader, setLoader] = useState(true);
 
-  const { isLoading } = useGetTopChartsQuery();
+  let isLoading = false;
 
-  setTimeout(() => setLoader(false), 2000);
+  setTimeout(() => {
+    setLoader(false);
+    isLoading = true;
+  }, 2000);
 
   if (!(isLoading || loader)) {
     setTimeout(() => setTime(false), 1000);

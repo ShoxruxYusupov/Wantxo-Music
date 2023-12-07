@@ -6,7 +6,7 @@ import { Discover } from '../pages';
 import { DisplayOption } from './DisplayOption/DisplayOption';
 import SongCard from './SongCard';
 import { useMatchMedia } from '../hooks/use-match-media';
-import { useGetTopChartsQuery } from '../redux/services/shazamCore';
+import { tracks } from '../constants/constants';
 
 export const TopChartCard = ({
   song,
@@ -41,7 +41,7 @@ export const TopChartCard = ({
     />
     <div className="flex-1 flex flex-col juctify-center mx-3">
       <Link
-        to={`/songs/${song.id - 2}`}
+        to={`/songs/${song.id}`}
         className="w-fit"
       >
         <p className="text-base font-medium text-white">{song.name}</p>
@@ -65,7 +65,7 @@ const TopPlay = () => {
     (state) => state.player
   );
 
-  const { data } = useGetTopChartsQuery();
+  let data = tracks;
 
   const handlePauseClick = () => {
     dispatch(playPause(false));

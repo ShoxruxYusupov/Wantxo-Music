@@ -128,7 +128,7 @@ const SongCard = ({ song, i, isPlaying, activeSong, baza, last, type }) => {
         <div
           className={`mt-4 flex sm:static absolute left-[6%] bottom-0 z-50 sm:text-center text-start flex-col`}
         >
-          <Link to={`/songs/${song?.id - 2}`}>
+          <Link to={`/songs/${song?.id}`}>
             <p className={`font-semibold text-white text-2xl truncate`}>
               {song?.name}
             </p>

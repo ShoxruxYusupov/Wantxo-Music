@@ -3,13 +3,13 @@ import DetailsHeader from '../components/DetailsHeader';
 import { useRef } from 'react';
 import Discover from './Discover';
 import { useMatchMedia } from '../hooks/use-match-media';
-import { useGetTopChartsQuery } from '../redux/services/shazamCore';
+import { tracks } from '../constants/constants';
 
 const SongDetails = () => {
   const divRef = useRef(null);
   const { songid } = useParams();
 
-  const { data } = useGetTopChartsQuery();
+  let data = tracks;
 
   const song = data?.[songid - 1];
 
