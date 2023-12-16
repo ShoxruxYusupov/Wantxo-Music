@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-
 import { MusicPlayer } from './components';
 import { dollar } from './assets';
 import { useState } from 'react';

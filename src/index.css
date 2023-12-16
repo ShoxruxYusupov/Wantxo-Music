@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .smooth-transition {
   transition: all 0.3s ease-in-out;
 }
@@ -278,7 +282,7 @@ input[type='range']::-moz-slider-thumb {
   transform: translate(0, 100%) rotate(4deg);
   animation: jump 2s ease-in-out infinite;
   display: inline-block;
-  font-family: 'Titan One', cursive;
+  font-family: 'Titan One';
   color: #fff;
   font-size: 4.7rem;
 }

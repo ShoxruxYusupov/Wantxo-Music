@@ -1,12 +1,10 @@
 import { useParams } from 'react-router-dom';
 import DetailsHeader from '../components/DetailsHeader';
-import { useRef } from 'react';
 import Discover from './Discover';
 import { useMatchMedia } from '../hooks/use-match-media';
 import { tracks } from '../constants/constants';
 
 const SongDetails = () => {
-  const divRef = useRef(null);
   const { songid } = useParams();
 
   let data = tracks;
@@ -23,10 +21,7 @@ const SongDetails = () => {
           tracks={data}
         />
       </div>
-      <div
-        className="flex flex-col sm:pt-10 pt-3 pl-4 sm:pl-0 flex-[4]"
-        ref={divRef}
-      >
+      <div className="flex flex-col sm:pt-10 pt-3 pl-4 sm:pl-0 flex-[4]">
         {!isMobile && (
           <DetailsHeader
             song={song}
